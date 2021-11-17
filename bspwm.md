@@ -14,7 +14,7 @@ A binary tree is a data structure that consists of a
   * Each leaf node holds zero or one windows, which contains a view of an app.
   * Each node has zero or two children.
   * Each internal node is responsilble for splitting a rectangle in half.
-  * A split is defined by two parameters: the type (horizontal or vertical) and the ratio (a real number r :: r < 1).
+  * A split is defined by two parameters: the type (horizontal or vertical) and the ratio (a real number r ::  0 < r < 1).
 
 ## Tree
 
