@@ -14,11 +14,19 @@
 copy the default file from /usr/share/doc/polybar/config
 The bar created is called 'example', given by [bar/example]
 
+Under [module/bspwm], add 'pin-workspaces = false'
+( see https://github.com/polybar/polybar/wiki/Module:-bspwm )
+
 comment out the section [module/mpd]
+
 comment out [modules/center] i3
-remove 'i3' from modules 
+
+remove 'i3' from modules-center
+
 remove wlan, battery, backlight from modules-right
+
 change eth0 interface from virbr0 to enp3s0
+
 ## Create launch.sh
 
 see https://github.com/polybar/polybar/wiki
