@@ -23,9 +23,11 @@ comment out [modules/center] i3
 
 remove 'i3' from modules-center
 
-remove wlan, battery, backlight from modules-right
 
-change eth0 interface from virbr0 to enp3s0
+in modules-right: 
+  * remove wlan, battery, backlight powermenu from modules-right
+  * move filesystem so that it is with memory, cpu etc
+  * change eth0 interface from virbr0 to enp3s0
 
 ## Create launch.sh
 
