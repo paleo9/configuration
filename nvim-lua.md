@@ -26,5 +26,17 @@ Seems like a good opportunity to convert to lua for the init file.
 
   * vim.api.xxx
 
+## Setting options in nvim.lua with examples
 
+Use :help api
 
+``` Lua
+-- nvim_buf_set_option({buffer}, {name}, {value}) // buffer is the id of the buffer to affect, current buffer is 0
+vim.api.nvim_buf_set_option(0, "tabstop", 2)
+
+-- nvim_win_set_option({window}, {name}, {value}) // window is the id of the window to affect, current window is 0
+vim.api.nvim_win_set_option(0, "number", true)
+
+-- use jj for <esc> in insert mode
+vim.api.nvim_set_keymap("i", "jj", "<esc>", {noremap = false, silent = true})
+```
