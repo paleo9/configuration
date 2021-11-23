@@ -40,3 +40,74 @@ vim.api.nvim_win_set_option(0, "number", true)
 -- use jj for <esc> in insert mode
 vim.api.nvim_set_keymap("i", "jj", "<esc>", {noremap = false, silent = true})
 ```
+
+## Install Packer package manager
+
+see  https://github.com/wbthomason/packer.nvim
+
+1.  Install the code into your .local directory. The nvim/ subdirectories will be created automatically.
+
+```
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+1. Create ~/.config/nvim/lua/plugins.lua
+
+```
+  return require('packer').startup(function()
+    use 'wbthomason/packer.nvim'
+  end)
+```
+
+1. Inside nvim, run the packer update or install script
+
+```
+  :PackerInstall
+    or
+  :PackerUpdate
+```
+
+## Install Language Server Protocol (LSP) Plugin
+
+1. Install the nvim-lspconfig plugin.
+1. Install a language server
+1. Add lua require('lspconfig').xx.setup{...} to your init.vim where "xx" is the name of the relevant config.
+1. Restart nvim.
+1. Run PackerUpdate or PackerInstall
+1. Check that an LSP client has attached to the current buffer.
+1. Create a project, this project must contain a file matching the root directory trigger.
+
+## Install the nvim-lspconfig plugin (using packer)
+
+``` lua
+  -- config/nvim/lua/plugins.lua:
+  use 'neovim/nvim-lspconfig'
+```
+
+## Install a language server (pyright)
+
+``` 
+  npm install -g pyright
+```
+
+## add require statement to nvim.init
+
+```
+  require('lspconfig').pyright.setup{}
+```
+
+## restart nvim and update Packer
+
+In nvim: 
+
+:PackerUpdate
+
+
+### Create a python file, add errors and try it out
+
+``` python
+  print hello
+  print "hello"
+  print("hello")
+
