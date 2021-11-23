@@ -5,3 +5,5 @@ Notes for my commonly used apps and their set up
 
   * window manager: bspwm
   * bar: polybar
+  * neovim: editor
+  * rcm:  config file management
